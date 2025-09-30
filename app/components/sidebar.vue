@@ -1,11 +1,14 @@
 <template>
-    <v-navigation-drawer app permanent class="bg-white">
+    <v-navigation-drawer app permanent>
         <v-list density="comfortable" nav>
-            <v-list-item v-for="m in menu" :key="m.id" :title="m.label" :to="m.to" router exact
-                :active="activemenu === m.name" @click="toggleMenu(m.name)">
+            <v-list-item v-for="m in menu" :key="m.id" :to="m.to" router exact :active="activemenu === m.name"
+                @click="toggleMenu(m.name)">
                 <!-- prepend slot สำหรับใส่ Font Awesome -->
                 <template #prepend>
                     <i :class="[m.icon, 'fa-lg']" class="mr-2"></i>
+                </template>
+                <template #title>
+                    <p class="text-md font-semibold">{{ m.label }}</p>
                 </template>
             </v-list-item>
         </v-list>
@@ -39,9 +42,9 @@ const menu = ref([
     {
         id: 3,
         name: "contact",
-        icon: "fa fa-file-text",
+        icon: "fa fa-table",
         to: "/contact",
-        label: "Document",
+        label: "Report",
     },
 ]);
 </script>

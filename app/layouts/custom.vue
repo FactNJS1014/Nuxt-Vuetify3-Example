@@ -1,19 +1,21 @@
-<script>
-import Sidebar from '~/components/sidebar.vue';
+<script setup>
+import Sidebar from '~/components/sidebar.vue'
 </script>
 
 <template>
-    <v-layout class="rounded border">
-        <v-app-bar title="Application bar"></v-app-bar>
+    <v-app>
+        <!-- App Bar -->
+        <v-app-bar app color="blue">
+            <v-app-bar-title>Application bar</v-app-bar-title>
+        </v-app-bar>
 
+        <!-- Sidebar + Main -->
         <Sidebar />
 
-        <v-main class="d-flex align-center justify-center" style="height: 300px;">
+        <v-main class="p-4">
             <v-container>
                 <slot />
             </v-container>
         </v-main>
-
-
-    </v-layout>
+    </v-app>
 </template>
